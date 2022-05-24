@@ -65,8 +65,13 @@ for c2 in clusters2:
     error_per_avg_cluster.append(avg_error) # add error for this cluster2 value, go to next one
 
 # plot all the errors
+ind = 0
 for avg_err in error_per_avg_cluster:
     plt.plot(clusters, avg_err)
+    plt.title("Inital Cluster = %d"%(clusters2[ind]))
+    plt.xlabel("Internal Cluster Values")
+    plt.ylabel("Mean squared error")
+    ind+=1
     plt.show()
 
 # samp = random.sample(range(orig_data.shape[0]), 3)
